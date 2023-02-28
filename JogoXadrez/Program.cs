@@ -1,4 +1,5 @@
-﻿using JogoXadrez.tabuleiro;
+﻿using JogoXadrez;
+using JogoXadrez.tabuleiro;
 
 internal class Program
 {
@@ -7,5 +8,8 @@ internal class Program
 
         Tabuleiro tab = new Tabuleiro(8, 8);
 
+        Tela.ImprimirTabuleiro(tab);
+
+        Console.ReadLine();
     }
 }
