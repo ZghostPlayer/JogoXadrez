@@ -1,6 +1,6 @@
 ﻿namespace JogoXadrez.tabuleiro
 {
-    internal class Posicao
+    class Posicao
     {
 
         public int linha { get; set; }
