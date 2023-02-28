@@ -1,18 +1,35 @@
 ﻿using JogoXadrez;
 using JogoXadrez.tabuleiro;
 using JogoXadrez.xadrez;
-
- class Program
+internal class Program
 {
     private static void Main(string[] args)
     {
-        PosicaoXadrez pos = new PosicaoXadrez('c', 7);
+        try
+        {
+            PartidaDeXadrez partida = new PartidaDeXadrez();
 
-        Console.WriteLine(pos);
+            while (!partida.terminada)
+            {
+                Console.Clear();
+                Tela.ImprimirTabuleiro(partida.tab);
 
-        Console.WriteLine(pos.toPosicao());
+                Console.WriteLine();
+                Console.Write("Origem: ");
+                Posicao origem = Tela.lerPosicaoXadrez().toPosicao();
+                Console.Write("Destino: ");
+                Posicao destino = Tela.lerPosicaoXadrez().toPosicao();
+
+                partida.executaMovimento(origem, destino);
+            }
+
+            Tela.ImprimirTabuleiro(partida.tab);
+        }
+        catch (TabuleiroException e)
+        {
+            Console.WriteLine(e.Message);
+        }
 
         Console.ReadLine();
-        
     }
 }
