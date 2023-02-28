@@ -40,8 +40,9 @@ internal class Program
                     Console.ReadLine();
                 }
             }
+            Console.Clear();
+            Tela.imprimirPartida(partida);
 
-            Tela.ImprimirTabuleiro(partida.tab);
         }
         catch (TabuleiroException e)
         {
